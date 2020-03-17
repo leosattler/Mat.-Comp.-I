@@ -4,4 +4,5 @@
 
 #### base_converter.py:
 - Converte número inteiro ou fracionário, positivo ou negativo, entre duas bases (menores ou iguais a 10) quaisquer.
-> Inputs: x (número a ser convertido), alpha (base de x), beta (base em que x será representado).
+
+> Última atualização: 1 de março de 2020.

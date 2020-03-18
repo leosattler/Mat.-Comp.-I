@@ -16,9 +16,9 @@ import sys
 #         precisa ser menor que alpha e alpha <= 10)
 # beta = base final do numero x (restricao: beta <= 10)
 #---------------------------------------------------------------------------------
-x = 0.1012
-alpha = 3
-beta = 5
+x = 0.101
+alpha = 4
+beta = 2
 #=================================================================================
 #                              FUNCOES AUXILIARES
 #---------------------------------------------------------------------------------
@@ -66,9 +66,9 @@ def conversor_frac_decimal_base(x, base):
         check_repeticao.append(num_multiplicado)                             # guardando valor da multiplicacao para check de repeticao
         num_multiplicado = num_multiplicado * base                           # realizando multiplicacao
         digito = int(num_multiplicado)                                       # digito de interese eh a parte inteira da multiplicacao
-        print(num_multiplicado, '->', digito)
+        #print(num_multiplicado, '->', digito)
         num_multiplicado = float('0.'+str(num_multiplicado).split('.')[-1])  # encontrando parte fracionaria da multiplicacao
-        print('prox.:', num_multiplicado)
+        #print('prox.:', num_multiplicado)
         x_base.append(int(digito))                                           # guardando digito da base beta        
         if check_repeticao.count(num_multiplicado)==2 or len(x_base)>14:     # checando se multiplicacao ja ocorreu num loop anterior (pelo menos 2x)
             detalhe = '...'
@@ -99,7 +99,7 @@ if x < 0:
     sinal = '-'
 #---------------------------------------------------------------------------------
 # Restricao de alpha (nesse caso sao duas)
-if alpha <= 10:
+if alpha <= 10 and alpha >1:
     for i in str(x):
         if i != '.':
             if int(i) >= alpha:  # checando cada digito de x para a restricao
@@ -109,15 +109,13 @@ if alpha <= 10:
                 sys.exit()
 else:
     print('Aviso:')
-    print('Bases precisam ser menores ou iguais a 10.')
-    print('Escolha outros valores.')
+    print('Escolha bases entre 2 e 10.')
     sys.exit()
 #---------------------------------------------------------------------------------
 # Restricao de beta
-if beta > 10:
+if beta > 10 or beta <=1:
     print('Aviso:')
-    print('Bases precisam ser menores ou iguais a 10.')
-    print('Escolha outros valores.')
+    print('Escolha bases entre 2 e 10.')
     sys.exit()
 #=================================================================================
 #                                  CONVERSAO

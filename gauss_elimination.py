@@ -1,6 +1,6 @@
 ##################################################################################
-# Codigo para converter numero (inteiro ou fracionario) entre duas bases quaisquer
-# INPE, Sao Jose dos Campos, SP, Brasil - 14 de Marco de 2020
+# Codigo para calcular raizes de um sistema liner via Met. de Eliminacao de Gauss
+# INPE, Sao Jose dos Campos, SP, Brasil - 19 de Marco de 2020
 # Leonardo Sattler Cassara - leocassara@igeo.ufrj.br
 ##################################################################################
 #=================================================================================
@@ -11,12 +11,6 @@ import numpy as np
 #=================================================================================
 #                                   INPUTS
 #---------------------------------------------------------------------------------
-# x = numero a ser convertido da base alpha para a base beta (restricao: x deve
-#     ser float ou int)
-# alpha = base inicial do numero x (restricao: todo dgiito de x
-#         precisa ser menor que alpha e alpha <= 10)
-# beta = base final do numero x (restricao: beta <= 10)
-#---------------------------------------------------------------------------------
 matriz_de_coeficientes = \
                          [[2, 1, -3], \
                           [-1, 3, 2], \
@@ -25,7 +19,7 @@ lado_direito = [-1, 12, 0]
 #=================================================================================
 #                                    MEG
 #---------------------------------------------------------------------------------
-# Encontrando matriz triangular conforme algoritmo de eliminacao de Gauss
+# Encontrando matriz triangular via algoritmo de eliminacao de Gauss
 #---------------------------------------------------------------------------------
 n = len(matriz_de_coeficientes)
 A = np.array(matriz_de_coeficientes,dtype=float)
@@ -48,6 +42,7 @@ for line in range(1,n):
 c=[]
 for i in range(n):
     c.append(list(A[i,:]).count(0))
+#
 # checando se numero de zeros na matriz e ideal, ou seja, se numero de zeros
 # aumenta em 1 da primeira linha em diante; equivalente a saber se o sistema
 # tem solucao. Caso contrario, o programa termina sem retornar as reaizes.

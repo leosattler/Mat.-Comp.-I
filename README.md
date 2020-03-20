@@ -8,5 +8,4 @@
 - gauss_elimination.py: calcula as raízes de um sistema linear através do Método da Eliminação de Gauss. 
 
 
-
 > Última atualização: 19 de março de 2020.

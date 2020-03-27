@@ -1,6 +1,7 @@
 ##################################################################################
-# Script para solucao de Problemas de Valor Inicial (PVI) definidos por Equacoes
-# Diferenciais pelo Metodo de Euler e Metodo de Runge-Kutta (de ordem 2, 3 e 4).
+# Script para solucao de Problemas de Valor Inicial (PVIs) definidos por Equacoes
+# Diferenciais Ordinarias (EDOs). Metodos empregados sao Metodo de Euler e
+# Metodo de Runge-Kutta de segunda, terceira e quarta ordem.
 # INPE, Sao Jose dos Campos, SP, Brasil - 27 de Marco de 2020
 # Leonardo Sattler Cassara - leocassara@igeo.ufrj.br
 ##################################################################################
